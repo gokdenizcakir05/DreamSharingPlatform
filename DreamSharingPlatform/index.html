@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Sayfa karakter seti ve mobil uyumluluk ayarları -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Sayfa başlığı -->
+  <title>Change Your Life</title>
+
+  <!-- Font Awesome ikon kütüphanesi -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Harici stil dosyası -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<script src="js/app.js" defer></script>
+  <!-- HEADER BAŞLANGIÇ -->
+  <header class="header">
+
+    <!-- Sol taraf: Logo alanı -->
+    <div class="header-left">
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" />
+      </div>
+    </div>
+
+    <!-- Navigasyon menüsü -->
+    <nav class="navbar">
+      <a href="#" class="active" data-page="dreamverse">DreamVerse</a>
+      <a href="#" data-page="myverse">MyVerse</a>
+      <a href="#" data-page="syd">SYD</a>
+      <a href="#" data-page="login">Log In/Profile</a>
+    </nav>
+
+    <!-- Sağ taraf: arama ve ayarlar butonları -->
+    <div class="header-right">
+
+      <!-- Arama kutusu -->
+      <div class="search-container">
+        <button id="search-toggle" class="icon-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <input type="text" id="search-input" placeholder="Search..." />
+      </div>
+
+      <!-- Ayarlar butonu -->
+      <div class="settings-container">
+        <button id="settings-toggle" class="icon-btn">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Ayarlar paneli -->
+    <div id="settings-panel" class="settings-panel">
+      <button id="close-settings" class="close-btn">&times;</button>
+      <h2>Settings</h2>
+      <a href="#">Settings</a>
+      <a href="#">Log out</a>
+    </div>
+
+    <!-- Panel arka planı -->
+    <div id="settings-overlay" class="settings-overlay"></div>
+  </header>
+  <!-- HEADER BİTİŞ -->
+
+
+  <!-- DREAMVERSE SAYFASI -->
+  <section id="dreamverse" class="page active dreamverse">
+
+    <!-- Post container başlangıcı -->
+    <div class="post">
+
+      <!-- Postları dinamik eklemek için boş div -->
+      <div id="dreamverse-posts" class="dreamverse"></div>
+
+      <!-- Kullanıcı bilgileri -->
+      <div class="post-header">
+        <img src="images/user1.png" alt="user" class="user-img" />
+        <h3><a href="#" class="username">@hayalperest123</a></h3>
+        <button class="follow-btn" onclick="toggleFollow(this)">
+          <i class="fa fa-user-plus"></i>
+        </button>
+      </div>
+
+      <!-- Post içerik alanı -->
+      <div class="post-content">
+        <p>
+          Bir gün kendi oyun stüdyomu kurmak istiyorum. Bağımsız bir ekip olarak insanların hayatına dokunan oyunlar yapmak en büyük hayalim.
+        </p>
+      </div>
+
+      <!-- Beğeni / yorum butonları -->
+      <div class="post-actions">
+        <button class="icon-btn" title="Beğen">
+          <i class="fas fa-heart"></i>
+          <span class="count">3</span>
+        </button>
+        <button class="icon-btn" title="Yorum">
+          <i class="fas fa-comment"></i>
+          <span class="count">4</span>
+        </button>
+      </div>
+
+      <!-- Yorum ön izleme alanı -->
+      <div class="comment-preview">
+        <p><strong><a href="#" class="username">@umutluadam</a>:</strong> Gerçekten ilham verici bir hayal!</p>
+        <p><strong><a href="#" class="username">@gameguru</a>:</strong> Umarım bir gün birlikte çalışırız!</p>
+        <p><strong><a href="#" class="username">@coderkid</a>:</strong> Senin gibi düşünen insanlar görmek çok güzel.</p>
+      </div>
+
+      <!-- Tüm yorumlar (gizli) -->
+      <div class="all-comments hidden">
+        <p><strong><a href="#" class="username">@umutluadam</a>:</strong> Gerçekten ilham verici bir hayal!</p>
+        <p><strong><a href="#" class="username">@gameguru</a>:</strong> Umarım bir gün birlikte çalışırız!</p>
+        <p><strong><a href="#" class="username">@coderkid</a>:</strong> Senin gibi düşünen insanlar görmek çok güzel.</p>
+        <p><strong><a href="#" class="username">@yenibirumut</a>:</strong> Tam da benim de hayalim!</p>
+      </div>
+
+      <!-- Yorum yazma kutusu -->
+      <div class="comment-box">
+        <input type="text" placeholder="Step into this dream..." />
+        <button class="send-btn" title="Gönder">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+
+    </div>
+    <!-- İlk post bitti -->
+
+
+    <!-- İkinci post başlangıcı -->
+    <div class="post">
+      <div class="post-header">
+        <img src="images/user2.png" alt="user" class="user-img" />
+        <h3><a href="#" class="username">@yaraticiruya</a></h3>
+        <button class="follow-btn" onclick="toggleFollow(this)">
+          <i class="fa fa-user-plus"></i>
+        </button>
+      </div>
+
+      <div class="post-content">
+        <p>
+          Hayalim, dünya genelinde sosyal adaletsizlikleri çözmeye yönelik bir platform kurmak. İnsanlara destek sağlayabileceğim bir ortam yaratmak istiyorum.
+        </p>
+      </div>
+
+      <div class="post-actions">
+        <button class="icon-btn" title="Beğen">
+          <i class="fas fa-heart"></i>
+          <span class="count">7</span>
+        </button>
+        <button class="icon-btn" title="Yorum">
+          <i class="fas fa-comment"></i>
+          <span class="count">4</span>
+        </button>
+      </div>
+
+      <div class="comment-preview">
+        <p><strong><a href="#" class="username">@ozgurkisi</a>:</strong> Bu vizyon inanılmaz, desteğik!</p>
+        <p><strong><a href="#" class="username">@yardimeli</a>:</strong> Hep birlikte dünya daha iyi bir yer olabilir!</p>
+        <p><strong><a href="#" class="username">@techsavvy</a>:</strong> Dijital dünya için harika bir fikir!</p>
+      </div>
+
+      <div class="all-comments hidden">
+        <p><strong><a href="#" class="username">@ozgurkisi</a>:</strong> Bu vizyon inanılmaz, desteğik!</p>
+        <p><strong><a href="#" class="username">@yardimeli</a>:</strong> Hep birlikte dünya daha iyi bir yer olabilir!</p>
+        <p><strong><a href="#" class="username">@techsavvy</a>:</strong> Dijital dünya için harika bir fikir!</p>
+        <p><strong><a href="#" class="username">@umutvadeden</a>:</strong> Gerçekten dokunaklı bir hayal, destekliyorum!</p>
+      </div>
+
+      <div class="comment-box">
+        <input type="text" placeholder="Step into this dream..." />
+        <button class="send-btn" title="Gönder">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+    <!-- İkinci post bitiş -->
+
+  </section>
+
+
+  <!-- MYVERSE SAYFASI -->
+  <section id="myverse" class="page myverse">
+    <div class="mv-layout">
+
+      <!-- SOL TARAF: Kullanıcı feed alanı -->
+      <div class="mv-feed">
+
+        <!-- Feed içindeki ilk post -->
+        <article class="post" data-user="@Ahmet">
+          <div class="post-header">
+            <img src="images/user1.png" alt="user" class="user-img" />
+            <h3><a href="#" class="username">@Ahmet</a></h3>
+            <button class="follow-btn" onclick="toggleUnfollow(this)">
+              <i class="fa fa-user-check"></i>
+            </button>
+          </div>
+
+          <div class="post-content">
+            <p>
+              Bir gün kendi teknoloji girişimimi kurmayı hayal ediyorum. Kullanıcı odaklı çözümler üretmek istiyorum.
+            </p>
+          </div>
+
+          <div class="post-actions">
+            <button class="icon-btn"><i class="fas fa-heart"></i><span class="count">24</span></button>
+            <button class="icon-btn"><i class="fas fa-comment"></i><span class="count">5</span></button>
+          </div>
+
+          <div class="comment-preview">
+            <p><strong><a href="#" class="username">@TechDreamer</a>:</strong> İlham verici bir hedef!</p>
+          </div>
+
+          <div class="comment-box">
+            <input type="text" placeholder="Step into this dream..." />
+            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </article>
+
+        <!-- İkinci kullanıcı postu -->
+        <article class="post" data-user="@Mehmet">
+          <div class="post-header">
+            <img src="images/user2.png" alt="user" class="user-img" />
+            <h3><a href="#" class="username">@Mehmet</a></h3>
+            <button class="follow-btn" onclick="toggleUnfollow(this)">
+              <i class="fa fa-user-check"></i>
+            </button>
+          </div>
+
+          <div class="post-content">
+            <p>Oyun tasarımı ve yazılım geliştirme benim için bir tutku.</p>
+          </div>
+
+          <div class="post-actions">
+            <button class="icon-btn"><i class="fas fa-heart"></i><span class="count">18</span></button>
+            <button class="icon-btn"><i class="fas fa-comment"></i><span class="count">3</span></button>
+          </div>
+
+          <div class="comment-preview">
+            <p><strong><a href="#" class="username">@GameLover</a>:</strong> Harika tutku!</p>
+          </div>
+
+          <div class="comment-box">
+            <input type="text" placeholder="Step into this dream..." />
+            <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </article>
+      </div>
+
+      <!-- SAĞ TARAF: Takip listesi -->
+      <aside class="mv-right">
+        <button id="mv-all" class="all-btn">All</button>
+        <h3 class="mv-right-title">Following</h3>
+
+        <ul class="mv-followers">
+          <li class="mv-follower" data-user="@Ahmet">
+            <img src="images/user1.png" alt="@Ahmet" class="user-img sm" />
+            <a href="#" class="username">@Ahmet</a>
+          </li>
+
+          <li class="mv-follower" data-user="@Mehmet">
+            <img src="images/user2.png" alt="@Mehmet" class="user-img sm" />
+            <a href="#" class="username">@Mehmet</a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- SYD SAYFASI -->
+  <section id="syd" class="page syd-section" style="max-width: 800px; margin: auto;">
+
+    <!-- İlk defa giren kullanıcıları teşvik eden alan -->
+    <div id="syd-post-prompt" class="post-prompt">
+      <h3>Your first step? Sharing it.</h3>
+      <button id="syd-open-post-form" class="post-button" aria-label="Post paylaş">+</button>
+    </div>
+
+    <!-- Yeni post paylaşma formu -->
+    <form id="syd-post-form" class="post-form hidden">
+      <textarea id="syd-post-content" rows="5" placeholder="Don't just dream it, share it!..."></textarea>
+
+      <!-- Paylaşım gizlilik ayarları -->
+      <div class="visibility-options" style="margin-top: 10px;">
+        <div class="switch-container">
+          <span class="switch-label">Public</span>
+          <label class="switch">
+            <input type="checkbox" id="visibilityToggle" />
+            <span class="slider"></span>
+          </label>
+          <span class="switch-label">Private</span>
+        </div>
+        <div id="privacyStatus">Current: Public</div>
+      </div>
+
+      <!-- Gönder / İptal butonları -->
+      <div class="form-buttons-right">
+        <button class="syd-submit-button" aria-label="Gönder">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        <button class="syd-cancel-button" aria-label="İptal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </form>
+
+    <!-- Kullanıcı tarafından gönderilen postların listesi -->
+    <div id="syd-posts-list" style="margin-top: 30px;"></div>
+
+  </section>
+
+
+  <!-- LOGIN / PROFILE SAYFASI -->
+  <section id="login" class="page" style="max-width: 800px; margin: auto; padding: 2rem;">
+
+    <h2>Log In / Profile</h2>
+    <p>Access your account securely and manage your profile settings</p>
+
+    <!-- Giriş formu -->
+    <form id="login-form" class="login-form" onsubmit="return false;">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <!-- Giriş ve kayıt butonları -->
+      <div class="button-row">
+        <button type="submit" class="login-submit">Log In</button>
+        <button type="button" id="show-register-btn" class="login-submit register-btn">Kayıt Ol</button>
+      </div>
+    </form>
+
+    <!-- Google ile giriş butonu -->
+    <button id="google-login-btn" class="google-login-btn">
+      <i class="fab fa-google"></i>
+      Sign in with Google
+    </button>
+
+    <!-- Kayıt formu -->
+    <form id="register-form" class="login-form hidden" onsubmit="return false;" style="margin-top: 20px;">
+      <h3>Kayıt Ol</h3>
+
+      <label for="reg-username">Username</label>
+      <input type="text" id="reg-username" name="reg-username" placeholder="Enter your username" required />
+
+      <label for="reg-email">Email</label>
+      <input type="email" id="reg-email" name="reg-email" placeholder="Enter your email address" required />
+
+      <label for="reg-password">Password</label>
+      <input type="password" id="reg-password" name="reg-password" placeholder="Enter your password" required />
+
+      <label for="reg-password2">Confirm Password</label>
+      <input type="password" id="reg-password2" name="reg-password2" placeholder="Confirm your password" required />
+
+      <!-- Kayıt ol ve vazgeç butonları -->
+      <div class="button-row">
+        <button type="submit" class="login-submit">Sign Up</button>
+        <button id="cancel-register-btn" type="button" class="login-submit cancel-btn">Back to Login</button>
+      </div>
+    </form>
+
+  </section>
+
+</body>
+</html>
